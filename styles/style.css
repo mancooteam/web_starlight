@@ -1,4 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 
+body {
+    width: 100%;
+    background-color: var(--tlo2);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+    padding: 0px 40px;
+}
+
+banner {
+    display: block;
+    width: 100vw;
+    height: 40vh;
+    background-image: url(../img/banner.jpeg);
+    background-size: cover;
+    background-position: center;
+}
 
 /** ROOT COLORS **/
 :root {
