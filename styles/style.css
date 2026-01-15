@@ -7,10 +7,14 @@ body {
     width: 100%;
     background-color: var(--tlo2);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
 }
 
 main {
-    padding: 0px 40px;
+    margin: 0px 40px;
+    color: var(--tekst);
+    padding: 30px;
+    background-color: var(--tlo3);
 }
 
 banner {
@@ -20,6 +24,55 @@ banner {
     background-image: url(../img/banner.jpeg);
     background-size: cover;
     background-position: center;
+}
+
+nav {
+    padding: 7px 20px;
+    background-color: var(--tlo4);
+    color: #fff!important;
+    border-bottom: 1px solid var(--em1);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+}
+
+nav a {
+    color: var(--em1);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+a {
+    color: var(--em1);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--em3)
+}
+
+h1 {
+    padding: 50px 0px;
+    border:1px solid var(--tlo4);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 20px;
+    color: var(--em2);
+    background-color: var(--tlo4);
+    margin-bottom: 20px;
+    font-family: 'Poppins';
+}
+
+footer {
+    text-align: center;
+    color: var(--tekst2);
+    background: var(--tlo4);
+    padding: 10px 0px;
+    font-size: 12px;
+    margin: 0 40px
 }
 
 /** ROOT COLORS **/
@@ -44,8 +97,21 @@ banner {
     --gk:#5C5AA6;
     --cl:#8F534B;
     --nkt:#828282;
-    --Poppins1: 12px 'Poppins';
     --border: 1px #1C1C1C solid;
     --scrollthumb: #7e7e7f;
     --tekst2: #eee;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v24/pxiAyp8kv8JHgFVrJJLmE0tMMPKzSQ.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* 2. Use the font */
+body {
+    font-family: 'Poppins', sans-serif;
 }
