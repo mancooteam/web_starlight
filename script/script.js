@@ -1,22 +1,20 @@
-async function obtenerDatos() {
+async function fetchData() {
     try {
-        let res = await fetch("../api.php", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(datos)
-        });
-
-        if(!res.ok) {
-            throw new Error("Error con el servidor");
+        const response = await fetch('api.php');
+        if (!response.ok) {
+            throw new Error(`HTTP error!`);
         }
-        let info = await res.json();
-        console.log("info");
-    } catch (e) {
-        console.error("Error: " + e);
+        const data = await response.json();
+        console.log("Data received:" + data);
+        document.body.innerHTML = `<h1>${data.message}</h1>`;
+        
+    } catch (error) {
+        console.log("Could not fetch data:" + error);
     }
 }
+
+// Call the function
+fetchData();
 
 document.addEventListener("DOMContentLoaded", () => {
     obtenerDatos();
