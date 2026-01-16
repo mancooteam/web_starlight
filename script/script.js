@@ -1,6 +1,6 @@
 async function fetchData() {
     try {
-        const response = await fetch('api.php');
+        const response = await fetch('http://localhost/api.php');
         if (!response.ok) {
             throw new Error(`HTTP error!`);
         }
@@ -13,9 +13,6 @@ async function fetchData() {
     }
 }
 
-// Call the function
-fetchData();
-
 document.addEventListener("DOMContentLoaded", () => {
-    obtenerDatos();
+    fetchData();
 });
