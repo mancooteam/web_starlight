@@ -5,11 +5,11 @@ async function obtenerDatos() {
         if(!res.ok) {
             throw new Error("Error con el servidor");
         }
+        let info = await res.json();
+        console.log("info");
     } catch (e) {
         console.error("Error: " + e);
     }
-    let info = await res.json();
-    console.log("info");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
