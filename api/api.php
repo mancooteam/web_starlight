@@ -6,7 +6,7 @@ $db = getenv('DB_PASSWORD');
 $host = getenv('DB_HOST');
 
 $conexion = mysqli_connect("$host","avnadmin",$db,"starlight");
-$sql = "SELECT * FROM postacie";
+$sql = "SELECT * FROM st_postac;";
 $result = mysqli_query($conexion,$sql);
 while($fila = mysqli_fetch_assoc($result)){
     $datos[]= array_map('utf8_encode', $fila);
