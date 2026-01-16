@@ -1,11 +1,11 @@
 async function fetchData() {
     try {
-        const response = await fetch('http://localhost:8000/api.php');
+        const response = await fetch('web-starlight-puf4xcplo-mancoteams-projects.vercel.app/api/api.php');
         if (!response.ok) {
             throw new Error(`HTTP error!`);
         }
         const data = await response.json();
-        console.log("Data received:" + data);
+        console.log("Data received:", data);
         document.body.innerHTML = `<h1>${data.message}</h1>`;
         
     } catch (error) {
