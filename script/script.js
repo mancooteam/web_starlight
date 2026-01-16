@@ -1,6 +1,6 @@
 async function fetchData() {
     try {
-        const response = await fetch('/api/api.php');
+        const response = await fetch('http://localhost:8080/api/api.php');
         if (!response.ok) {
             throw new Error(`HTTP error!`);
         }
