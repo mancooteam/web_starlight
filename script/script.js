@@ -1,6 +1,6 @@
 async function fetchData() {
     try {
-        const response = await fetch('web-starlight-puf4xcplo-mancoteams-projects.vercel.app/api/api.php');
+        const response = await fetch('/api/api.php');
         if (!response.ok) {
             throw new Error(`HTTP error!`);
         }
