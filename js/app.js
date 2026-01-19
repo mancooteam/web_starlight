@@ -15,11 +15,9 @@ const createCard = (e) => {
     const klan = document.createElement('klan');
     klan.innerText = e.klan;
     klan.classList.add(e.klan,"klany");
-    klan.style=`color: ${e.klan}`;
+    klan.style=`color: var(--${e.klan})`;
 
-    const toyhouse = document.createElement('toyhouse');
-    toyhouse.innerText = e.toyhouse || '';
-    staty.append(klan, toyhouse);
+    staty.append(klan);
     postac.append(avek, imie, staty);
 
     document.getElementById('spis').appendChild(postac);
