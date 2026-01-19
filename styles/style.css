@@ -59,6 +59,11 @@ banner {
     background-position: center;
 }
 
+postac:hover {
+    transform: rotateY(360deg);
+    transition-duration: 1s;
+}
+
 .klany {
     font-weight: bold;
     text-transform: uppercase;
