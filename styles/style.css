@@ -51,7 +51,7 @@ main {
 
 banner {
     display: block;
-    width: 100vw;
+    /*width: 100vw;*/
     height: 40vh;
     background-color: var(--em2);
     // background-image: url('');
@@ -76,7 +76,7 @@ nav {
     background-color: var(--tlo4);
     color: #fff!important;
     border-bottom: 1px solid var(--em1);
-    /*width: 100%;*/
+    width: 100%;
     position: fixed;
     top: 0;
     z-index: 9999;
