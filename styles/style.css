@@ -125,11 +125,15 @@ spis span {
     color: var(--em3);
 }
 
-@media (max-width: 768px) {
-    /* CSS rules here only apply to screens smaller than 768px */
+@media (max-width: 600px) {
     .spis {
-        flex-direction: column;
+        display: block!important;
     }
+}
+
+.right {
+    position: relative;
+    float: right;
 }
 
 /** ROOT COLORS **/
