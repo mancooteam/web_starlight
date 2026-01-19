@@ -14,7 +14,7 @@ const createCard = (e) => {
 
     const klan = document.createElement('klan');
     klan.innerText = e.klan;
-    klan.classList.add(e.klan,klany);
+    klan.classList.add(e.klan,"klany");
 
     const toyhouse = document.createElement('toyhouse');
     toyhouse.innerText = e.toyhouse || '';
