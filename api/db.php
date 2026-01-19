@@ -30,8 +30,6 @@ function getDBConnection() {
         $pdo = new PDO($dsn, $user, $pass, $options);
         return $pdo;
     } catch (PDOException $e) {
-        // MODO DEBUG: Muestra el error real en pantalla para que sepamos qué pasa
-        // (Cuando funcione, cambia esto por error_log)
         die("Error de conexión SQL: " . $e->getMessage());
     }
 }
