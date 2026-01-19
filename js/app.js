@@ -24,8 +24,7 @@ async function fetchData() {
             throw new Error(`HTTP error!`);
         }
         const data = await response.json();
-        console.log("Data received:", data);
-        const postacie = JSON.parse(data);
+        console.log("Data received:", postacie);
         postacie.forEach((element) => {
             createCard(element);
         })
