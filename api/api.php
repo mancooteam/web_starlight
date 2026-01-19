@@ -6,7 +6,7 @@ require_once 'db.php';
 
 try {
     $pdo = getDBConnection();
-    $stmt = $pdo->query("SELECT '¡Hola desde la Base de Datos Aiven!' as texto_prueba");
+    $stmt = $pdo->query("SELECT * FROM st_postacie");
     $resultado = $stmt->fetch();
 
     $respuesta = [
