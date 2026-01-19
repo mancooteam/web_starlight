@@ -4,6 +4,7 @@ const createCard = (e) => {
 
     const avek = document.createElement('img');
     avek.src = e.avek;
+    avek.classList.add('avek');
     avek.style = `background-image: url(${e.avek})`;
 
     const imie = document.createElement('staty');
