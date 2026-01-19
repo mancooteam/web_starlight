@@ -6,7 +6,7 @@ require_once 'db.php';
 
 try {
     $pdo = getDBConnection();
-    $stmt = $pdo->query("SELECT * FROM st_postacie");
+    $stmt = $pdo->query("SELECT * FROM st_postac");
     $resultado = $stmt->fetch();
 
     $respuesta = [
