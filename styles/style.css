@@ -66,6 +66,11 @@ banner {
     background-position: center;
 }
 
+.klany {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
 nav {
     padding: 7px 20px;
     background-color: var(--tlo4);

@@ -4,15 +4,17 @@ const createCard = (e) => {
 
     const avek = document.createElement('img');
     avek.src = e.avek;
+    avek.style = `background-image: url(${e.avek})`;
 
     const imie = document.createElement('staty');
-    imie.style = `background-image: url(${e.imie})`;
+    imie.innerText = `<span>Imię:</span> ${e.name}`;
+
 
     const staty = document.createElement('staty');
 
     const klan = document.createElement('klan');
     klan.innerText = e.klan;
-    klan.classList.add(e.klan);
+    klan.classList.add(e.klan,klany);
 
     const toyhouse = document.createElement('toyhouse');
     toyhouse.innerText = e.toyhouse || '';
