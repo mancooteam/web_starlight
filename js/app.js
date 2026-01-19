@@ -17,8 +17,8 @@ const createCard = (e) => {
     klan.classList.add(e.klan,"klany");
     klan.style=`color: var(--${e.klan})`;
 
-    staty.append(klan);
-    postac.append(avek, imie, staty);
+    staty.append(imie, klan);
+    postac.append(avek, staty);
 
     document.getElementById('spis').appendChild(postac);
 }
