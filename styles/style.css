@@ -109,6 +109,11 @@ footer {
     margin: 0 40px
 }
 
+spis span {
+    font-weight: bold;
+    color: var(--em3);
+}
+
 /** ROOT COLORS **/
 :root {
     --tlo1: #373737;

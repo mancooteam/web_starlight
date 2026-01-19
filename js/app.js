@@ -1,13 +1,13 @@
 const createCard = (e) => {
     const postac = document.createElement('postac');
-    postac.style = `border: 1px solid var(--${e.klan})`;
+    postac.style = `border: 3px solid var(--${e.klan}); border-radius: 26px;`;
 
     const avek = document.createElement('img');
     avek.src = e.avek;
     avek.style = `background-image: url(${e.avek}); width: 200px; height: auto; background-size: cover; background-position: center;`;
 
     const imie = document.createElement('staty');
-    imie.innerHTML = `<span>Imię:</span> ${e.imie}`;
+    imie.innerHTML = `<span>Imię: </span>${e.imie}`;
 
 
     const staty = document.createElement('staty');
