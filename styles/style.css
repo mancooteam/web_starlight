@@ -38,6 +38,10 @@ body {
     font-size: 15px;
 }
 
+staty {
+    display: grid;
+}
+
 main {
     margin: 0px 40px;
     color: var(--tekst);
@@ -58,6 +62,8 @@ banner {
 .klany {
     font-weight: bold;
     text-transform: uppercase;
+    width: 100%;
+    text-align: center;
 }
 
 nav {
