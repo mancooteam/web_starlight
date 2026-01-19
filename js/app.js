@@ -1,3 +1,13 @@
+const getKlan = (k) => {
+    if (k == "cien") return "Klan Cienia";
+    if (k == "grom") return "Klan Gromu";
+    if (k == "rzeka") return "Klan Rzeki";
+    if (k == "wicher") return "Klan Wichru";
+    if (k == "pnk") return "Plemię";
+    if (k = "gk") return "Gwiezdny Klan";
+    else return "inna :), skonkaktuj się na Nath";
+}
+
 const createCard = (e) => {
     const postac = document.createElement('postac');
     postac.style = `border: 3px solid var(--${e.klan}); border-radius: 26px;`;
@@ -15,9 +25,10 @@ const createCard = (e) => {
     const staty = document.createElement('staty');
 
     const klan = document.createElement('klan');
-    klan.innerText = e.klan;
     klan.classList.add(e.klan,"klany");
+    const imieKlan = getKlan(e.klan);
     klan.style=`color: var(--${e.klan})`;
+    klan.innerText = imieKlan;
 
     staty.append(imie, klan);
     postac.append(avek, staty);
