@@ -7,13 +7,15 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <nav><a href="postacie.html">spis postaci</a></nav>
+    <nav><a href="index.html">Strona główna</a> <a href="postacie.html">spis postaci</a></nav>
     <banner></banner>
     <main>
-        <h1>Siema, pracujemy!</h1>  
-        <p>To jest strona w której możesz zapisywać swoje postacie i móc ogarniać na nich sesje, relacje itp!</p>  
+        <h1>Siema, pracujemy!</h1>
+        <p>To jest strona w której możesz zapisywać swoje postacie i móc ogarniać na nich sesje, relacje itp!</p>
     </main>
     <footer>mancoteam © 2026 | for Starlight rp</footer>
     <script src="script/app.js"></script>
 </body>
 </html>
+<?
+echo "help";
