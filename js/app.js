@@ -1,6 +1,6 @@
 const createCard = (e) => {
     const postac = document.createElement('postac');
-    postac.style = `border: 1px solid --var(${e.klan})`;
+    postac.style = `border: 1px solid var(--${e.klan})`;
 
     const avek = document.createElement('img');
     avek.src = e.avek;
