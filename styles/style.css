@@ -62,7 +62,7 @@ banner {
     width: 100vw;
     height: 40vh;
     background-color: var(--em2);
-    background-image: url();
+    // background-image: url('');
     background-size: cover;
     background-position: center;
 }
