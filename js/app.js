@@ -4,7 +4,7 @@ const createCard = (e) => {
 
     const avek = document.createElement('img');
     avek.src = e.avek;
-    avek.style = `background-image: url(${e.avek}); width: 200px; height: 200px; background-size: cover; background-position: center;`;
+    avek.style = `background-image: url(${e.avek}); width: 200px; height: auto; background-size: cover; background-position: center;`;
 
     const imie = document.createElement('staty');
     imie.innerHTML = `<span>Imię:</span> ${e.imie}`;
@@ -31,7 +31,6 @@ async function fetchData() {
             throw new Error(`HTTP error!`);
         }
         const data = await response.json();
-        console.log("Data received:", data);
         if (data.message) {
             data.message.forEach((e) => {
                 createCard(e);
