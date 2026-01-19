@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spis postaci</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <nav><a href="index.html">Strona główna</a> <a href="postacie.html">spis postaci</a></nav>
+    <banner></banner>
+    <main>
+        <h1>Siema, pracujemy!</h1>
+        <div class="card">
+            <h2>Nowa postać</h2>
+
+            <form id="characterForm">
+                <div class="form-group">
+                    <label for="imie">Imię</label>
+                    <input type="text" id="imie" name="imie" required placeholder="Ej: Zarpa de Fuego">
+                </div>
+
+                <div class="form-group">
+                    <label for="klan">Klan</label>
+                    <input type="text" id="klan" name="klan" required placeholder="Ej: trueno">
+                </div>
+
+                <div class="form-group">
+                    <label for="ranga">Ranga</label>
+                    <input type="text" id="ranga" name="ranga" placeholder="Ej: guerrero">
+                </div>
+
+                <div class="form-group">
+                    <label for="avek">Awatar</label>
+                    <input type="url" id="avek" name="avek" placeholder="https://imgur.com/...">
+                </div>
+
+                <div class="form-group">
+                    <label for="toyhouse">Toyhouse</label>
+                    <input type="text" id="toyhouse" name="toyhouse" placeholder="Enlace o ID">
+                </div>
+
+                <button type="submit" id="btnGuardar">Zachowaj postać</button>
+            </form>
+
+            <div id="mensaje"></div>
+        </div>
+
+        <script>
+            const form = document.getElementById('characterForm');
+            const mensajeDiv = document.getElementById('mensaje');
+            const btnGuardar = document.getElementById('btnGuardar');
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                btnGuardar.disabled = true;
+                btnGuardar.innerText = "Zapisywanie postaci...";
+                mensajeDiv.innerText = "";
+
+                const formData = {
+                    imie: document.getElementById('imie').value,
+                    klan: document.getElementById('klan').value,
+                    ranga: document.getElementById('ranga').value,
+                    avek: document.getElementById('avek').value
+                };
+
+                try {
+                    const response = await fetch('api/insert.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(formData)
+                    });
+
+                    const data = await response.json();
+
+                    // 3. Manejar respuesta
+                    if (response.ok && data.status === 'ok') {
+                        mensajeDiv.className = 'exito';
+                        mensajeDiv.innerText = "Postać została zapisana!";
+                        form.reset(); //
+                    } else {
+                        throw new Error(data.message || 'Wystąpił bład! Skontaktuj się z Nath');
+                    }
+
+                } catch (error) {
+                    mensajeDiv.className = 'error';
+                    mensajeDiv.innerText = "Error: " + error.message;
+                    console.error(error);
+                } finally {
+                    btnGuardar.disabled = false;
+                    btnGuardar.innerText = "Zapisz";
+                }
+            });
+        </script>
+    </main>
+    <footer>mancoteam © 2026 | for Starlight rp</footer>
+    <script src="script/app.js"></script>
+</body>
+</html>
+<?
+echo "help";
