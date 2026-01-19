@@ -61,7 +61,7 @@ banner {
 
 postac:hover {
     transform: rotateY(360deg);
-    transition-duration: 1s;
+    transition-duration: 2s;
 }
 
 .klany {
@@ -76,7 +76,7 @@ nav {
     background-color: var(--tlo4);
     color: #fff!important;
     border-bottom: 1px solid var(--em1);
-    width: 100%;
+    /*width: 100%;*/
     position: fixed;
     top: 0;
     z-index: 9999;
