@@ -18,9 +18,8 @@ postac {
 
 avek {
     display: block;
-    width: auto;
+    width: 200px;
     height: 200px;
-    background-image: url('../img/banner.jpeg');
     background-size: cover;
     background-position: center;
 }

@@ -1,11 +1,12 @@
 const createCard = (e) => {
     const postac = document.createElement('postac');
+    postac.style = `border: 1px solid --var(${e.klan})`;
 
     const avek = document.createElement('img');
     avek.src = e.avek;
 
     const imie = document.createElement('staty');
-    imie.innerText = e.imie;
+    imie.style = `background-image: url(${e.imie})`;
 
     const staty = document.createElement('staty');
 
