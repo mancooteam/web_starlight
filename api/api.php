@@ -7,11 +7,18 @@ require_once 'db.php';
 try {
     $pdo = getDBConnection();
     $stmt = $pdo->query("SELECT * FROM st_postac");
-    $resultado = $stmt->fetch();
+
+    $resultarray = array();
+
+    if ($stmt) {
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $resultarray[] = $row;
+        }
+    }
 
     $respuesta = [
         "status" => "ok",
-        "message" => $resultado['texto_prueba']
+        "message" => $resultarray
     ];
 
     echo json_encode($respuesta);
