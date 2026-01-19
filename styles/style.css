@@ -6,6 +6,7 @@
 spis {
     display: flex;
     gap: 20px;
+    flex-direction: column;
 }
 
 postac {
@@ -28,10 +29,6 @@ em {
     color: var(--em2);
     font-weight: bold;
     text-decoration: none;
-}
-
-staty {
-    display: grid;
 }
 
 body {
