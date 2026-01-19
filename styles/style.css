@@ -5,6 +5,7 @@
 
 spis {
     display: flex;
+    gap: 20px;
 }
 
 postac {

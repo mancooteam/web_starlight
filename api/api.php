@@ -1,41 +1,26 @@
 <?php
-// Prevent PHP from sending HTML errors that break JSON parsing
-ini_set('display_errors', 0);
 header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *');
 
-$datos = [];
-$db = getenv('DB_PASSWORD');
-$host = getenv('DB_HOST');
+require_once '../db.php';
 
-// 1. Safety Check: Verify environment variables exist in Vercel settings
-if (!$db || !$host) {
-    echo json_encode(["error" => "Database credentials (DB_PASSWORD or DB_HOST) are missing in Vercel."]);
-    exit;
+try {
+    $pdo = getDBConnection();
+    $stmt = $pdo->query("SELECT '¡Hola desde la Base de Datos Aiven!' as texto_prueba");
+    $resultado = $stmt->fetch();
+
+    $respuesta = [
+        "status" => "ok",
+        "message" => $resultado['texto_prueba']
+    ];
+
+    echo json_encode($respuesta);
+
+} catch (Exception $e) {
+    http_response_code(500);
+    echo json_encode([
+        "status" => "error",
+        "message" => "Error del servidor: " . $e->getMessage()
+    ]);
 }
-
-// 2. Connect and handle failures
-$conexion = mysqli_connect($host, "avnadmin", $db, "starlight");
-
-if (!$conexion) {
-    echo json_encode(["error" => "Database connection failed: " . mysqli_connect_error()]);
-    exit;
-}
-
-// 3. Set charset (Modern replacement for utf8_encode)
-mysqli_set_charset($conexion, "utf8mb4");
-
-$sql = "SELECT * FROM st_postac;";
-$result = mysqli_query($conexion, $sql);
-
-if ($result) {
-    while($fila = mysqli_fetch_assoc($result)){
-        // Directly append row; mysqli_set_charset handles the encoding
-        $datos[] = $fila; 
-    }
-    echo json_encode($datos);
-} else {
-    echo json_encode(["error" => "SQL Query failed: " . mysqli_error($conexion)]);
-}
-
-mysqli_close($conexion);
 ?>
