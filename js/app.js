@@ -7,7 +7,9 @@ const createCard = (e) => {
     avek.style = `background-image: url(${e.avek}); width: 200px; height: auto; background-size: cover; background-position: center;`;
 
     const imie = document.createElement('staty');
-    imie.innerHTML = `<span>Imię: </span>${e.imie}`;
+    imie.innerHTML = `${e.imie}`;
+    imie.style.width = '100%';
+    imie.style = "text-align: center; text-transform: uppercase;";
 
 
     const staty = document.createElement('staty');
