@@ -33,6 +33,8 @@ const createCard = (e) => {
     button.id = "usun";
     button.innerText = "modyfikuj";
 
+    link.appendChild(button);
+
     console.log(`Postać: ${e.imie} - ${e.klan}`)
 
 
@@ -45,7 +47,7 @@ const createCard = (e) => {
     klan.innerText = imieKlan;
 
     staty.append(imie, klan, ranga);
-    postac.append(avek, staty, button);
+    postac.append(avek, staty, link);
 
     document.getElementById('spis').appendChild(postac);
 }
