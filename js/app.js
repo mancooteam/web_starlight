@@ -14,6 +14,7 @@ const createCard = (e) => {
 
     const ranga = document.createElement('ranga');
     ranga.style = `text-align: center; font-size: 10px; text-transform: uppercase; color: var(--${e.klan}); border-top: 1px solid; margin-top: 5px; padding-top: 6px; margin-bottom: -5px;`;
+    ranga.innerHTML = `${e.ranga}`;
 
     const avek = document.createElement('img');
     avek.src = e.avek;
