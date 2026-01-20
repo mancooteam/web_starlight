@@ -29,9 +29,20 @@ const createCard = (e) => {
     const link = document.createElement('a');
     link.href = "edit.html?id=" + e.id;
 
+    const span = document.createElement('span');
+    span.id = "buttons";
+
     const button = document.createElement('button')
-    button.id = "usun";
+    button.id = "mod";
     button.innerText = "modyfikuj";
+
+    const profil = document.createElement('a');
+    a.href = `https://starlight-rp.pl/member.php?action=profile&uid=${e.id}`;
+    const button2 = document.createElement('button');
+    button2.id = "see";
+    button2.innerText = "Profil";
+
+    span.appendChild(link, profil);
 
     link.appendChild(button);
 
@@ -47,7 +58,7 @@ const createCard = (e) => {
     klan.innerText = imieKlan;
 
     staty.append(imie, klan, ranga);
-    postac.append(avek, staty, link);
+    postac.append(avek, staty, span);
 
     document.getElementById('spis').appendChild(postac);
 }
