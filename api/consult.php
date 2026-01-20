@@ -21,8 +21,6 @@ try {
         $id = $_GET['id'];
     }
 
-
-
     if (!$id) {
         throw new Exception("Brak ID postaci (Missing Character ID)");
     }

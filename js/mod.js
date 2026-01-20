@@ -18,11 +18,11 @@ async function fetchData() {
             console.error("No id found");
             document.getElementById("header").innerHTML = "<h2>Wystąpił błąd - nie ma postaci o takiej ID</h2>";
         } else {
-            const response = await fetch('../api/modify.php?id=' + id);
+            const response = await fetch('../api/consult.php?id=' + id);
             if (!response.ok) {
                 throw new Error(`HTTP error!`);
             }
-            const text = await response.json();
+            const data = await response.json();
             if (data.message) {
                 data.message.forEach((e) => {
                     showProfile(e);
@@ -39,4 +39,25 @@ async function fetchData() {
 
 document.addEventListener("DOMContentLoaded", () => {
     fetchData();
+    document.getElementById("btnGuardar").addEventListener("click", (e) => {
+        e.preventDefault();
+        const imie = document.getElementById("imie").value;
+        const klan = document.getElementById("klan").value;
+        const ranga = document.getElementById("ranga").value;
+        const avek = document.getElementById("avek").value;
+        const toyhouse = document.getElementById("toyhouse").value;
+        const id = document.getElementById("id").value;
+
+    if (imie != "" && klan != "" && ranga != "" && avek != "" && toyhouse != "" && id != "") {
+        fetch("../api/modify.php",
+            {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({id,imie,klan,ranga,avek, toyhouse})
+            })
+        .then(res => res.json())
+    } else {
+        alert ("Nie wypełniono wszystkich pól");
+    }
+    })
 });
