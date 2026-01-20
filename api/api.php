@@ -1,4 +1,5 @@
-<? php
+<?php
+// ^ Ensure there is NO space between '<?' and 'php'
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 
@@ -6,6 +7,8 @@ require_once 'db.php';
 
 try {
     $pdo = getDBConnection();
+
+    // This query selects ALL characters ordered by ID
     $stmt = $pdo->query("SELECT * FROM st_postac ORDER BY id");
 
     $resultarray = array();
