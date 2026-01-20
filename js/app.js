@@ -5,7 +5,7 @@ const getKlan = (k) => {
     if (k == "wicher") return "Klan Wichru";
     if (k == "samotnik") return "Samotnik";
     if (k == "pnk") return "Plemię";
-    if (k = "gk") return "Gwiezdny Klan";
+    if (k == "gk") return "Gwiezdny Klan";
     else return "inna :), skonkaktuj się na Nath";
 }
 
@@ -39,11 +39,8 @@ const createCard = (e) => {
     const profil = document.createElement('a');
     profil.href = `https://starlight-rp.pl/member.php?action=profile&uid=${e.id}`;
     const b_profil = document.createElement('button');
+    b_profil.innerText = "profil"
     profil.appendChild(b_profil);
-
-    const button2 = document.createElement('button');
-    button2.id = "see";
-    button2.innerText = "Profil";
 
     span.appendChild(link, profil);
 
