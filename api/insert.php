@@ -8,7 +8,7 @@ header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: POST");
 
 try {
-    $rutaDB = __DIR__ . '/api/db.php';
+    $rutaDB = __DIR__ . '/db.php';
 
     if (file_exists($rutaDB)) {
         require_once $rutaDB;
