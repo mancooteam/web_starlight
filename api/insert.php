@@ -9,10 +9,10 @@ header("Access-Control-Allow-Methods: POST");
 
 try {
     $rutaDB = __DIR__ . '/db.php';
-    $pdo = getDBConnection();
 
     if (file_exists($rutaDB)) {
         require_once $rutaDB;
+        $pdo = getDBConnection();
     } else {
         throw new Exception("No encuentro el archivo en: " . $rutaDB);
     }
