@@ -30,17 +30,21 @@ const createCard = (e) => {
     link.href = "edit.html?id=" + e.id;
 
     const span = document.createElement('span');
-    span.id = "buttons";
 
-    const button = document.createElement('button')
-    button.id = "mod";
-    button.innerText = "modyfikuj";
+    const ba_mod = document.createElement('a');
+    const pa_mod = document.createElement('a');
 
-    const profil = document.createElement('a');
-    profil.href = `https://starlight-rp.pl/member.php?action=profile&uid=${e.id}`;
-    const b_profil = document.createElement('button');
-    b_profil.innerText = "profil"
-    profil.appendChild(b_profil);
+    ba_mod.href = "edit.html?id=" + e.id;
+    pa_mod.href = "https://starlight-rp.pl/member.php?action=profile&uid=" + e.id;
+
+    const b_mod = document.createElement('button');
+    const p_mod = document.createElement('button');
+
+    b_mod.innerText = "Modyfikuj";
+    p_mod.innerHTML = "Profil";
+
+    ba_mod.appendChild(b_mod);
+    pa_mod.appendChild(p_mod);
 
     console.log(`Postać: ${e.imie} - ${e.klan}`)
 
@@ -52,7 +56,7 @@ const createCard = (e) => {
     klan.style=`color: var(--${e.klan})`;
     klan.innerText = imieKlan;
 
-    span.appendChild(link, profil);
+    span.appendChild(ba_mod,pa_mod);
 
     staty.append(imie, klan, ranga);
     postac.append(avek, staty, span);
