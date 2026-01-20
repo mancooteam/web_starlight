@@ -25,6 +25,13 @@ const createCard = (e) => {
     imie.style.width = '100%';
     imie.style = "text-align: center; text-transform: uppercase;";
 
+    const link = document.createElement('a');
+    link.href = "edit.html?id=" + e.id;
+
+    const button = document.createElement('button')
+    button.id = "usun";
+    button.value = "modyfikuj";
+
 
     const staty = document.createElement('staty');
 
@@ -35,7 +42,7 @@ const createCard = (e) => {
     klan.innerText = imieKlan;
 
     staty.append(imie, klan, ranga);
-    postac.append(avek, staty);
+    postac.append(avek, staty, button);
 
     document.getElementById('spis').appendChild(postac);
 }
