@@ -3,9 +3,9 @@ const getKlan = (k) => {
     if (k == "grom") return "Klan Gromu";
     if (k == "rzeka") return "Klan Rzeki";
     if (k == "wicher") return "Klan Wichru";
+    if (k == "samotnik") return "Samotnik";
     if (k == "pnk") return "Plemię";
     if (k = "gk") return "Gwiezdny Klan";
-    if (k == "samotnik") return "Samotnik";
     else return "inna :), skonkaktuj się na Nath";
 }
 
@@ -31,7 +31,9 @@ const createCard = (e) => {
 
     const button = document.createElement('button')
     button.id = "usun";
-    button.value = "modyfikuj";
+    button.innerText = "modyfikuj";
+
+    console.log(`Postać: ${e.imie} - ${e.klan}`)
 
 
     const staty = document.createElement('staty');
