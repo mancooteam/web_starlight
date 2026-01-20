@@ -37,7 +37,7 @@ const createCard = (e) => {
     button.innerText = "modyfikuj";
 
     const profil = document.createElement('a');
-    a.href = `https://starlight-rp.pl/member.php?action=profile&uid=${e.id}`;
+    profil.href = `https://starlight-rp.pl/member.php?action=profile&uid=${e.id}`;
     const b_profil = document.createElement('button');
     profil.appendChild(b_profil);
 
