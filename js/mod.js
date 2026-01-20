@@ -8,6 +8,8 @@ async function fetchData() {
 
         const id = urlParams.get('id');
 
+        document.getElementById("id").value = id;
+
         if (!id) {
             console.error("No id found");
             document.getElementById("card").innerHTML = "<h2>Wystąpił błąd - nie ma postaci o takiej ID</h2>";
