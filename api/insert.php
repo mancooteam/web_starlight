@@ -9,16 +9,16 @@ header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: POST");
 
 try {
-    if (file_exists(__DIR__ . '/../bd.php')) {
-        require_once __DIR__ . '/../bd.php';
-    } elseif (file_exists('../bd.php')) {
-        require_once '../bd.php';
+    if (file_exists(__DIR__ . '/../db.php')) {
+        require_once __DIR__ . '/../db.php';
+    } elseif (file_exists('../db.php')) {
+        require_once '../db.php';
     } else {
-        throw new Exception("Error crítico: No se encuentra el archivo bd.php en la ruta ../bd.php");
+        throw new Exception("Error crítico: No se encuentra el archivo db.php en la ruta ../db.php");
     }
 
     if (!isset($pdo)) {
-        throw new Exception("El archivo bd.php se cargó, pero la variable \$pdo no existe.");
+        throw new Exception("El archivo db.php se cargó, pero la variable \$pdo no existe.");
     }
 
     $inputJSON = file_get_contents('php://input');
