@@ -14,7 +14,6 @@ async function fetchData() {
             console.error("No id found");
             document.getElementById("header").innerHTML = "<h2>Wystąpił błąd - nie ma postaci o takiej ID</h2>";
         } else {
-
             const response = await fetch('../api/modify.php?id=' + id);
             if (!response.ok) {
                 throw new Error(`HTTP error!`);

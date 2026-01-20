@@ -1,5 +1,5 @@
 <?php
-// ^ Ensure there is NO space between '<?' and 'php'
+
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 

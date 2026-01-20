@@ -1,35 +1,55 @@
-<? php
-header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: *');
+<?php
+// 1. Fix the opening tag (no space allowed)
+ini_set('display_errors', 0); // Hide system errors from output
+error_reporting(E_ALL);
 
-require_once 'db.php';
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+
+require_once __DIR__ . '/db.php';
 
 try {
     $pdo = getDBConnection();
-    if (isset($_GET['id'])) $id = $_GET['id'];
-    else $id = 000;
-    $stmt = $pdo->query("SELECT * FROM st_postac WHERE id like ". $id);
 
-    $resultarray = array();
+    $inputJSON = file_get_contents('php://input');
+    $input = json_decode($inputJSON, true);
 
-    if ($stmt) {
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $resultarray[] = $row;
-        }
+    $id = null;
+    if (isset($input['id'])) {
+        $id = $input['id'];
+    } elseif (isset($_GET['id'])) {
+        $id = $_GET['id'];
     }
 
-    $respuesta = [
-        "status" => "ok",
-        "message" => $resultarray
-    ];
+    if (!$id) {
+        throw new Exception("Brak ID postaci (Missing Character ID)");
+    }
 
-    echo json_encode($respuesta);
+    $sql = "SELECT * FROM st_postac WHERE id = "$id;
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([':id' => $id]);
+
+    $character = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($character) {
+        echo json_encode([
+            "status" => "ok",
+            "data" => $character
+        ]);
+    } else {
+        echo json_encode([
+            "status" => "error",
+            "message" => "Nie znaleziono postaci o ID: " . $id
+        ]);
+    }
+    exit;
 
 } catch (Exception $e) {
-    http_response_code(500);
+    http_response_code(400);
     echo json_encode([
         "status" => "error",
-        "message" => "Error del servidor: " . $e->getMessage()
+        "message" => $e->getMessage()
     ]);
+    exit;
 }
 ?>
