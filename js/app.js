@@ -33,7 +33,7 @@ const createCard = (e) => {
     klan.style=`color: var(--${e.klan})`;
     klan.innerText = imieKlan;
 
-    staty.append(imie, klan);
+    staty.append(imie, klan, ranga);
     postac.append(avek, staty);
 
     document.getElementById('spis').appendChild(postac);
