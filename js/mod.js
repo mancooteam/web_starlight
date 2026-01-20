@@ -12,21 +12,22 @@ async function fetchData() {
 
         if (!id) {
             console.error("No id found");
-            document.getElementById("card").innerHTML = "<h2>Wystąpił błąd - nie ma postaci o takiej ID</h2>";
-        }
-
-        const response = await fetch('../api/modify.php?id=' + id);
-        if (!response.ok) {
-            throw new Error(`HTTP error!`);
-        }
-        const text = await response.json();
-        const data = JSON.parse(text);
-        if (data.message) {
-            data.message.forEach((e) => {
-                showProfile(e);
-            });
+            document.getElementById("header").innerHTML = "<h2>Wystąpił błąd - nie ma postaci o takiej ID</h2>";
         } else {
-            console.error("No 'message' array found in response");
+
+            const response = await fetch('../api/modify.php?id=' + id);
+            if (!response.ok) {
+                throw new Error(`HTTP error!`);
+            }
+            const text = await response.json();
+            const data = JSON.parse(text);
+            if (data.message) {
+                data.message.forEach((e) => {
+                    showProfile(e);
+                });
+            } else {
+                console.error("No 'message' array found in response");
+            }
         }
 
     } catch (error) {
