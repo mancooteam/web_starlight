@@ -6,7 +6,7 @@ require_once 'db.php';
 
 try {
     $pdo = getDBConnection();
-    $stmt = $pdo->query("SELECT * FROM st_postac");
+    $stmt = $pdo->query("SELECT * FROM st_postac ORDER BY id");
 
     $resultarray = array();
 

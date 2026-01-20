@@ -12,6 +12,9 @@ const createCard = (e) => {
     const postac = document.createElement('postac');
     postac.style = `border: 3px solid var(--${e.klan}); border-radius: 26px;`;
 
+    const ranga = document.createElement('ranga');
+    ranga.style = `text-align: center; font-size: 10px; text-transform: uppercase; color: var(--${e.klan}); border-top: 1px solid; margin-top: 5px; padding-top: 6px; margin-bottom: -5px;`;
+
     const avek = document.createElement('img');
     avek.src = e.avek;
     avek.style = `background-image: url(${e.avek}); width: 200px; height: auto; background-size: cover; background-position: center;`;

@@ -34,7 +34,7 @@ try {
     $stmt = $pdo->prepare($sql);
 
     $stmt->execute([
-        ':id'       => $input['id'] ?? null,
+        ':id'       => $input['id'] ?? 000,
         ':imie'     => $input['imie'] ?? null,
         ':klan'     => $input['klan'] ?? null,
         ':ranga'    => $input['ranga'] ?? '',
