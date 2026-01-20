@@ -3,17 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modyfikujesz postać</title>
+    <title>Spis postaci</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/form.css">
 </head>
 <body>
-<nav><a href="index.html">Strona główna</a></nav>
+<nav><a href="index.html">Strona główna</a> <a href="postacie.html">spis postaci</a></nav>
 <banner></banner>
 <main>
     <h1>Siema, pracujemy!</h1>
-    <p>Tu jeszcze nic nie ma! Ale będzie ⩥</p>
+    <div class="card">
+        <h2>Nowa postać</h2>
+
+        <form id="characterForm">
+            <table>
+                <tr>
+                    <td><label for="id">ID postaci: </label></td>
+                    <td><input type="number" id="id" name="id" placeholder="000" disabled></td>
+                </tr>
+                <tr>
+                    <td><label for="imie">Imię: </label></td>
+                    <td><input type="text" id="imie" name="imie" required></td>
+                </tr>
+                <tr>
+                    <td><label for="klan">Klan: </label></td>
+                    <td>
+                        <select id="klan" name="klan">
+                            <option value="cien">Klan Cienia</option>
+                            <option value="grom">Klan Gromu</option>
+                            <option value="wicher">Klan Wichru</option>
+                            <option value="rzeka">Klan Rzeki</option>
+                            <option value="pnk">Plemię</option>
+                            <option value="samotnik">Samotnik</option>
+                            <option value="gk">Gwiezndy Klan</option>
+                            <option value="cl">Ciemny Las</option>
+                            <option value="nkt">Nieaktywny</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="ranga">Ranga: </label></td>
+                    <td><input type="text" id="ranga" name="ranga"></td>
+                </tr>
+                <tr>
+                    <td><label for="avek">Awatar: </label></td>
+                    <td><input type="url" id="avek" name="avek"></td>
+                </tr>
+                <tr>
+                    <td><label for="toyhouse">Toyhouse: </label></td>
+                    <td><input type="text" id="toyhouse" name="toyhouse"></td>
+                </tr>
+            </table>
+            <button type="submit" id="btnGuardar">Zachowaj postać</button>
+        </form>
+
+        <div id="mensaje"></div>
+        <bot>
+            <button id="staty">Zobacz statystyki</button>
+        </bot>
+    </div>
 </main>
 <footer>mancoteam © 2026 | for Starlight rp</footer>
-<script src="script/app.js"></script>
+<script src="script/mod.js"></script>
 </body>
 </html>
