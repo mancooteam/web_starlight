@@ -5,6 +5,7 @@ const getKlan = (k) => {
     if (k == "wicher") return "Klan Wichru";
     if (k == "pnk") return "Plemię";
     if (k = "gk") return "Gwiezdny Klan";
+    if (k == "samotnik") return "Samotnik";
     else return "inna :), skonkaktuj się na Nath";
 }
 
