@@ -42,12 +42,7 @@ const createCard = (e) => {
     b_profil.innerText = "profil"
     profil.appendChild(b_profil);
 
-    span.appendChild(link, profil);
-
-    link.appendChild(button);
-
     console.log(`Postać: ${e.imie} - ${e.klan}`)
-
 
     const staty = document.createElement('staty');
 
@@ -56,6 +51,8 @@ const createCard = (e) => {
     const imieKlan = getKlan(e.klan);
     klan.style=`color: var(--${e.klan})`;
     klan.innerText = imieKlan;
+
+    span.appendChild(link, profil);
 
     staty.append(imie, klan, ranga);
     postac.append(avek, staty, span);
