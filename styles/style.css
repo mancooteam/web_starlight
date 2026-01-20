@@ -139,15 +139,14 @@ spis span {
 }
 
 spis button {
-    padding: 10px 30px;
+    padding: 7px 20px;
     background: var(--em2);
     margin: auto;
     display: block;
     border-radius: 6px;
     border: 1px solid var(--tlo4);
     box-shadow: 0px 0px 5px 0px black;
-    margin-top: 30px;
-    font-size: 13px;
+    font-size: 12px;
     text-transform: uppercase;
     font-weight: bold;
     color: var(--tlo4);
