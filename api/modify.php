@@ -6,7 +6,7 @@ require_once 'db.php';
 
 try {
     $pdo = getDBConnection();
-    if (isset($_GET['id']) $id = $_GET['id'];
+    if (isset($_GET['id'])) $id = $_GET['id'];
     else $id = 000;
     $stmt = $pdo->query("SELECT * FROM st_postac WHERE id like ". $id);
 
