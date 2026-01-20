@@ -154,6 +154,10 @@ spis button {
     font-family: 'Poppins', sans-serif;
 }
 
+span #button {
+    margin-top: 10px;
+}
+
 /** ROOT COLORS **/
 :root {
     --tlo1: #373737;

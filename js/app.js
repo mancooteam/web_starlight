@@ -30,6 +30,7 @@ const createCard = (e) => {
     link.href = "edit.html?id=" + e.id;
 
     const span = document.createElement('span');
+    span.id = "buttons";
 
     const ba_mod = document.createElement('a');
     const pa_mod = document.createElement('a');
