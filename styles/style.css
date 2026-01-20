@@ -138,20 +138,6 @@ spis span {
     color: var(--em2);
 }
 
-.card {
-    width: 260px;
-    background: var(--tlo4);
-    margin: auto;
-    padding: 50px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 0px var(--tlo4);
-}
-
-.card h2 {
-    color: var(--em3);
-    text-transform: uppercase;
-}
-
 /** ROOT COLORS **/
 :root {
     --tlo1: #373737;
