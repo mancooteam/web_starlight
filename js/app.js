@@ -56,7 +56,7 @@ const createCard = (e) => {
     klan.style=`color: var(--${e.klan})`;
     klan.innerText = imieKlan;
 
-    span.appendChild(ba_mod,pa_mod);
+    span.append(ba_mod,pa_mod);
 
     staty.append(imie, klan, ranga);
     postac.append(avek, staty, span);
