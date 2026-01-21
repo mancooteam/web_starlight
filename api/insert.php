@@ -48,7 +48,7 @@ try {
     $stmt2 = $pdo->prepare($sql2);
 
     $stmt2->execute([
-        ':id_postac'    => $idPersonaje, // Usamos el mismo ID
+        ':id_postac'    => $input['id'] ?? 000, // Usamos el mismo ID
         ':sila'         => $input['sila'] ?? 0,
         ':zrecznosc'    => $input['zrecznosc'] ?? 0,
         ':szybkosc'     => $input['szybkosc'] ?? 0,
