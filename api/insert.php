@@ -29,7 +29,9 @@ try {
     }
 
     $sql = "INSERT INTO st_postac (id, imie, klan, ranga, avek, toyhouse)
-                VALUES (:id, :imie, :klan, :ranga, :avek, :toyhouse)";
+                VALUES (:id, :imie, :klan, :ranga, :avek, :toyhouse);
+                INSERT INTO st_staty (id_postac, sila, zrecznosc, szybkosc, odpornosc, hp, wytrzymalosc)
+                VALUES (:id_postac, :sila, :zrecznosc, :szybkosc, :odpornosc, :hp, :wytrzymalosc)";
 
     $stmt = $pdo->prepare($sql);
 
@@ -40,21 +42,13 @@ try {
         ':ranga'    => $input['ranga'] ?? '',
         ':avek'     => $input['avek'] ?? '',
         ':toyhouse' => $input['toyhouse'] ?? ''
-    ]);
-
-    $sql2 = "INSERT INTO st_staty (id_postac, sila, zrecznosc, szybkosc, odpornosc, hp, wytrzymalosc)
-                 VALUES (:id_postac, :sila, :zrecznosc, :szybkosc, :odpornosc, :hp, :wytrzymalosc)";
-
-    $stmt2 = $pdo->prepare($sql2);
-
-    $stmt2->execute([
-        ':id_postac'    => $input['id'] ?? 000, // Usamos el mismo ID
-        ':sila'         => $input['sila'] ?? 0,
-        ':zrecznosc'    => $input['zrecznosc'] ?? 0,
-        ':szybkosc'     => $input['szybkosc'] ?? 0,
-        ':odpornosc'    => $input['odpornosc'] ?? 0,
-        ':hp'           => $input['hp'] ?? 0,
-        ':wytrzymalosc' => $input['wytrzymalosc'] ?? 0
+        ':id_postac'    => $input['id'] ?? 000,
+        ':sila'         => $input['sila'] ?? 1,
+        ':zrecznosc'    => $input['zrecznosc'] ?? 1,
+        ':szybkosc'     => $input['szybkosc'] ?? 1,
+        ':odpornosc'    => $input['odpornosc'] ?? 1,
+        ':hp'           => $input['hp'] ?? 50,
+        ':wytrzymalosc' => $input['wytrzymalosc'] ?? 50
     ]);
 
     echo json_encode(["status" => "ok", "message" => "Postać zachowana!"]);
