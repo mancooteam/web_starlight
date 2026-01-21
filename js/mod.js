@@ -31,9 +31,7 @@ async function fetchData() {
             const data = await response.json();
             console.log(data);
             if (data.message) {
-                data.message.forEach((e) => {
-                    showProfile(e);
-                });
+                showProfile(data.message);
             } else {
                 console.log("Recieved: " + data);
                 console.error("No 'message' array found in response");
