@@ -29,7 +29,7 @@ try {
     }
 
     $sql = "INSERT INTO st_postac (id, imie, klan, ranga, avek, toyhouse)
-            VALUES (:id, :imie, :klan, :ranga, :avek, :toyhouse)";
+                VALUES (:id, :imie, :klan, :ranga, :avek, :toyhouse)";
 
     $stmt = $pdo->prepare($sql);
 
@@ -40,6 +40,21 @@ try {
         ':ranga'    => $input['ranga'] ?? '',
         ':avek'     => $input['avek'] ?? '',
         ':toyhouse' => $input['toyhouse'] ?? ''
+    ]);
+
+    $sql2 = "INSERT INTO st_staty (id_postac, sila, zrecznosc, szybkosc, odpornosc, hp, wytrzymalosc)
+                 VALUES (:id_postac, :sila, :zrecznosc, :szybkosc, :odpornosc, :hp, :wytrzymalosc)";
+
+    $stmt2 = $pdo->prepare($sql2);
+
+    $stmt2->execute([
+        ':id_postac'    => $idPersonaje, // Usamos el mismo ID
+        ':sila'         => $input['sila'] ?? 0,
+        ':zrecznosc'    => $input['zrecznosc'] ?? 0,
+        ':szybkosc'     => $input['szybkosc'] ?? 0,
+        ':odpornosc'    => $input['odpornosc'] ?? 0,
+        ':hp'           => $input['hp'] ?? 0,
+        ':wytrzymalosc' => $input['wytrzymalosc'] ?? 0
     ]);
 
     echo json_encode(["status" => "ok", "message" => "Postać zachowana!"]);

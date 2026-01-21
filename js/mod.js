@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 body: JSON.stringify({id,imie,klan,ranga,avek, toyhouse})
             })
         .then(res => res.json())
+        window.location.replace("postacie.html");
     } else {
         alert ("Nie wypełniono wszystkich pól");
     }

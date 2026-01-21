@@ -145,7 +145,6 @@ spis button {
     display: block;
     border-radius: 6px;
     border: 1px solid var(--tlo4);
-    box-shadow: 0px 0px 5px 0px black;
     font-size: 12px;
     text-transform: uppercase;
     font-weight: bold;
@@ -155,6 +154,7 @@ spis button {
 
 #buttons {
     margin-top: 10px;
+    display: flex;
 }
 
 /** ROOT COLORS **/
