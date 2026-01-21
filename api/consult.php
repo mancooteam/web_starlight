@@ -31,7 +31,7 @@ try {
     if ($character) {
         echo json_encode([
             "status" => "ok",
-            "data" => $character
+            "message" => $character
         ]);
     } else {
         echo json_encode([
