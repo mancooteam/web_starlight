@@ -1,12 +1,9 @@
 <?php
-// 1. Fix the opening tag (no space allowed)
-ini_set('display_errors', 0); // Hide system errors from output
-error_reporting(E_ALL);
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-require_once __DIR__ . '/db.php';
+require_once '/db.php';
 
 try {
     $pdo = getDBConnection();
@@ -14,7 +11,7 @@ try {
     $inputJSON = file_get_contents('php://input');
     $input = json_decode($inputJSON, true);
 
-    $id = null;
+    $id = 000;
     if (isset($input['id'])) {
         $id = $input['id'];
     } elseif (isset($_GET['id'])) {

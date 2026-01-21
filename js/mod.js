@@ -18,11 +18,18 @@ async function fetchData() {
             console.error("No id found");
             document.getElementById("header").innerHTML = "<h2>Wystąpił błąd - nie ma postaci o takiej ID</h2>";
         } else {
-            const response = await fetch('../api/consult.php?id=' + id);
+            const response = await fetch('../api/consult.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ id: id }) // This populates php://input
+            });
             if (!response.ok) {
                 throw new Error(`HTTP error!`);
             }
             const data = await response.json();
+            console.log(data);
             if (data.message) {
                 data.message.forEach((e) => {
                     showProfile(e);
