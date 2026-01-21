@@ -39,9 +39,9 @@ try {
         ':id'       => $input['id'] ?? 000,
         ':imie'     => $input['imie'] ?? null,
         ':klan'     => $input['klan'] ?? null,
-        ':ranga'    => $input['ranga'] ?? '',
-        ':avek'     => $input['avek'] ?? '',
-        ':toyhouse' => $input['toyhouse'] ?? ''
+        ':ranga'    => $input['ranga'] ?? '-',
+        ':avek'     => $input['avek'] ?? '-',
+        ':toyhouse' => $input['toyhouse'] ?? 'brak',
         ':id_postac'    => $input['id'] ?? 000,
         ':sila'         => $input['sila'] ?? 1,
         ':zrecznosc'    => $input['zrecznosc'] ?? 1,
