@@ -28,6 +28,7 @@ async function fetchData() {
                     showProfile(e);
                 });
             } else {
+                console.log("Recieved: " + data);
                 console.error("No 'message' array found in response");
             }
         }
