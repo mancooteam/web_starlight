@@ -68,10 +68,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({id,imie,klan,ranga,avek, toyhouse, s, zr, sz, o, hp, w})
             })
-        .then(res => res.json()
+        .then(res => res.json())
         .then(data => {
             document.getElementById("mensaje").innerText = data.message;
-        })
+        });
     } else {
         alert ("Nie wypełniono wszystkich pól");
     }
