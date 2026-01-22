@@ -30,7 +30,7 @@ try {
 
     $sql = "UPDATE st_postac SET imie = :imie, klan = :klan,
     ranga = :ranga, avek = :avek, toyhouse = :toyhouse
-     WHERE id = :id";
+     WHERE id = :id; UPDATE st_staty SET sila = :sila, zrecznosc = :zrecznosc, szybkosc = :szybkosc, odpornosc = :odpornosc, hp = :hp, wytrzymalosc = :wytrzymalosc";
 
     $stmt = $pdo->prepare($sql);
 
@@ -40,7 +40,13 @@ try {
         ':klan'     => $input['klan'] ?? Brak,
         ':ranga'    => $input['ranga'] ?? 'kocię',
         ':avek'     => $input['avek'] ?? '-',
-        ':toyhouse' => $input['toyhouse'] ?? '-'
+        ':toyhouse' => $input['toyhouse'] ?? '-',
+        ':sila' => $input['s'] ?? 1,
+        ':zrecznosc' => $input['zr'] ?? 1,
+        ':szybkosc' => $input ['sz'] ?? 1,
+        ':odpornosc' => $input['o'] ?? 1,
+        ':hp' => $input['hp'] ?? 50,
+        'wytrzymalosc' => $input['w'] ?? 50
     ]);
 
     echo json_encode(["status" => "ok", "message" => "Postać zapisana!"]);

@@ -54,12 +54,19 @@ document.addEventListener("DOMContentLoaded", () => {
         const toyhouse = document.getElementById("toyhouse").value;
         const id = document.getElementById("id").value;
 
+        const s = document.getElementById("s").value;
+        const zr = document.getElementById("zr").value;
+        const sz = document.getElementById("sz").value;
+        const o = document.getElementById("o").value;
+        const hp = document.getElementById("hp").value;
+        const w = document.getElementById("w").value;
+
     if (imie != "" && klan != "" && ranga != "" && avek != "" && toyhouse != "" && id != "") {
         fetch("../api/modify.php",
             {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
-                body: JSON.stringify({id,imie,klan,ranga,avek, toyhouse})
+                body: JSON.stringify({id,imie,klan,ranga,avek, toyhouse, s, zr, sz, o, hp, w})
             })
         .then(res => res.json())
         window.location.replace("postacie.html");
