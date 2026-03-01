@@ -10,7 +10,7 @@ function getDBConnection() {
     $ca_content = getenv('MYSQL_ATTR_SSL_CA');
 
     if (!$ca_content) {
-        die("Error Crítico: No se encontró la variable MYSQL_ATTR_SSL_CA en el entorno.");
+        die("BŁĄD: Nie znaleziono warości MYSQL_ATTR_SSL_CA");
     }
 
     $ca_path = tempnam(sys_get_temp_dir(), 'db-ca-cert');
@@ -21,16 +21,15 @@ function getDBConnection() {
     $options = [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        // LE DECIMOS A PDO DÓNDE ESTÁ EL ARCHIVO TEMPORAL
         PDO::MYSQL_ATTR_SSL_CA => $ca_path,
-        PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false // A veces necesario en nubes
+        PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false
     ];
 
     try {
         $pdo = new PDO($dsn, $user, $pass, $options);
         return $pdo;
     } catch (PDOException $e) {
-        die("Error de conexión SQL: " . $e->getMessage());
+        die("Błąd w połączeniu z SQL: " . $e->getMessage());
     }
 }
 ?>
